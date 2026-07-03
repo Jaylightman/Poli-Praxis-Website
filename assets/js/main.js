@@ -109,15 +109,15 @@
   var OFFICE_HOURS = {
     'muenchen-mitte': {
       1: [[9, 12], [14, 18]], 2: [[9, 12], [14, 18]], 3: [[9, 12], [14, 17]],
-      4: [[9, 12], [14, 18]], 5: [[9, 12], [14, 18]]
+      4: [[9, 12], [14, 18]], 5: [[9, 12]]
     },
     'muenchen-nord': {
-      1: [[8, 12], [13, 17]], 2: [[8, 12], [13, 17]], 3: [[8, 12]],
-      4: [[8, 12], [13, 17]], 5: [[8, 12], [13, 17]]
+      1: [[8, 12], [13, 16]], 2: [[8, 12], [13, 17]], 3: [[8, 12]],
+      4: [[8, 12], [13, 17]], 5: [[8, 12]]
     },
     'augsburg': {
       1: [[9, 12], [14, 17]], 2: [[9, 12], [14, 17]], 3: [[9, 12]],
-      4: [[9, 12], [14, 18]], 5: [[9, 14]]
+      4: [[9, 14], [15.5, 18]], 5: [[9, 14]]
     }
   };
   var DAY_NAMES = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
@@ -220,13 +220,26 @@
   }
 
   /* ------------------------------------------------------------------
-     Doctor filter by office (aerzte.html) — with pop-in transition
+     Office filter bars (doctors page + specialties section)
+     Cards carry data-offices; specialty cards derive it from their
+     location chips so the visible tags stay the single source of truth.
      ------------------------------------------------------------------ */
-  var filterBar = document.querySelector('[data-filter-bar]');
-  if (filterBar) {
+  var CITY_SLUGS = { 'München Mitte': 'muenchen-mitte', 'München Nord': 'muenchen-nord', 'Augsburg': 'augsburg' };
+  document.querySelectorAll('.feature-card__tags').forEach(function (tags) {
+    var slugs = [];
+    tags.querySelectorAll('.chip').forEach(function (chip) {
+      var slug = CITY_SLUGS[chip.textContent.trim()];
+      if (slug) slugs.push(slug);
+    });
+    var card = tags.closest('.feature-card');
+    if (card && slugs.length) card.setAttribute('data-offices', slugs.join(' '));
+  });
+
+  document.querySelectorAll('[data-filter-bar]').forEach(function (filterBar) {
+    var scope = filterBar.closest('section') || document;
     var buttons = filterBar.querySelectorAll('.filter-btn');
-    var cards = document.querySelectorAll('[data-offices]');
-    var countEl = document.querySelector('[data-filter-count]');
+    var cards = scope.querySelectorAll('[data-offices]');
+    var countEl = scope.querySelector('[data-filter-count]');
 
     var applyFilter = function (office) {
       var visible = 0;
@@ -244,7 +257,10 @@
         }
       });
       if (countEl) {
-        countEl.textContent = visible + (visible === 1 ? ' Ärztin/Arzt' : ' Ärztinnen und Ärzte');
+        var label = visible === 1
+          ? (countEl.getAttribute('data-singular') || '')
+          : (countEl.getAttribute('data-plural') || '');
+        countEl.textContent = visible + ' ' + label;
       }
     };
 
@@ -262,7 +278,7 @@
       var target = filterBar.querySelector('[data-office="' + match[1] + '"]');
       if (target) target.click();
     }
-  }
+  });
 
   /* ------------------------------------------------------------------
      Google Maps: embed loads automatically (placeholder is no-JS fallback)
