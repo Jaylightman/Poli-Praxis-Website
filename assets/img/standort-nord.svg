@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Illustration: Olympiaturm, Olympiapark und Allianz Arena in München Nord">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#DDF1F4"/>
+      <stop offset=".7" stop-color="#FFFFFF"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2F93A2"/>
+      <stop offset="1" stop-color="#14525C"/>
+    </linearGradient>
+    <g id="tree">
+      <rect x="-3" y="-6" width="6" height="26" rx="2" fill="#3E5C60"/>
+      <circle cx="0" cy="-24" r="20" fill="#2F93A2"/>
+      <circle cx="-13" cy="-14" r="13" fill="#3BAFBF"/>
+      <circle cx="12" cy="-13" r="12" fill="#35A0AF"/>
+    </g>
+    <g id="lamp">
+      <rect x="-2" y="-52" width="4" height="54" rx="2" fill="#54565A"/>
+      <circle cx="0" cy="-56" r="7" fill="#F4E9C8" stroke="#54565A" stroke-width="2"/>
+    </g>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#sky)"/>
+
+  <!-- Sun & clouds -->
+  <circle cx="140" cy="100" r="46" fill="#3BAFBF" opacity=".16"/>
+  <circle cx="140" cy="100" r="28" fill="#3BAFBF" opacity=".18"/>
+  <g fill="#FFFFFF" opacity=".9">
+    <ellipse cx="580" cy="82" rx="46" ry="14"/>
+    <ellipse cx="615" cy="70" rx="30" ry="11"/>
+    <ellipse cx="300" cy="60" rx="36" ry="12"/>
+  </g>
+  <g stroke="#54565A" stroke-width="2" fill="none" opacity=".45" stroke-linecap="round">
+    <path d="M245 110 q6 -7 12 0 M260 106 q6 -7 12 0"/>
+    <path d="M690 130 q6 -7 12 0"/>
+  </g>
+
+  <!-- Far skyline -->
+  <g fill="#A3C6CC" opacity=".45">
+    <rect x="30" y="330" width="70" height="120"/>
+    <polygon points="30,330 65,308 100,330"/>
+    <rect x="105" y="355" width="50" height="95"/>
+    <rect x="480" y="340" width="60" height="110"/>
+    <rect x="545" y="360" width="45" height="90"/>
+  </g>
+
+  <!-- Modern blocks & BMW-style towers (left) -->
+  <g>
+    <rect x="60" y="352" width="70" height="96" rx="4" fill="#35A0AF"/>
+    <g fill="#E7F5F7">
+      <rect x="70" y="364" width="50" height="7" rx="3.5"/>
+      <rect x="70" y="380" width="50" height="7" rx="3.5"/>
+      <rect x="70" y="396" width="50" height="7" rx="3.5"/>
+      <rect x="70" y="412" width="50" height="7" rx="3.5"/>
+    </g>
+    <!-- four-cylinder cluster -->
+    <g>
+      <rect x="150" y="270" width="36" height="178" rx="17" fill="#54565A"/>
+      <rect x="182" y="288" width="36" height="160" rx="17" fill="#64666B"/>
+      <rect x="214" y="270" width="36" height="178" rx="17" fill="#54565A"/>
+      <rect x="246" y="288" width="36" height="160" rx="17" fill="#64666B"/>
+      <g fill="#E7F5F7" opacity=".85">
+        <rect x="158" y="290" width="20" height="5" rx="2.5"/>
+        <rect x="158" y="306" width="20" height="5" rx="2.5"/>
+        <rect x="158" y="322" width="20" height="5" rx="2.5"/>
+        <rect x="190" y="306" width="20" height="5" rx="2.5"/>
+        <rect x="190" y="322" width="20" height="5" rx="2.5"/>
+        <rect x="222" y="290" width="20" height="5" rx="2.5"/>
+        <rect x="222" y="306" width="20" height="5" rx="2.5"/>
+        <rect x="254" y="306" width="20" height="5" rx="2.5"/>
+        <rect x="254" y="322" width="20" height="5" rx="2.5"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Olympic tent roofs -->
+  <g>
+    <path d="M300 448 Q346 348 412 448 Z" fill="#E7F5F7" stroke="#A3C6CC" stroke-width="3"/>
+    <path d="M368 448 Q430 326 505 448 Z" fill="#F4FAFB" stroke="#A3C6CC" stroke-width="3"/>
+    <g stroke="#A3C6CC" stroke-width="2.5" stroke-linecap="round">
+      <line x1="346" y1="352" x2="346" y2="446"/>
+      <line x1="430" y1="330" x2="430" y2="446"/>
+    </g>
+  </g>
+
+  <!-- Olympiaturm -->
+  <g>
+    <polygon points="382,448 396,150 410,150 424,448" fill="#257684"/>
+    <polygon points="382,448 396,150 403,150 397,448" fill="#2F93A2"/>
+    <ellipse cx="403" cy="182" rx="50" ry="20" fill="#3BAFBF"/>
+    <ellipse cx="403" cy="170" rx="50" ry="16" fill="#257684"/>
+    <ellipse cx="403" cy="167" rx="34" ry="11" fill="#3BAFBF"/>
+    <ellipse cx="403" cy="181" rx="42" ry="7" fill="#E7F5F7"/>
+    <rect x="400" y="66" width="6" height="86" fill="#257684"/>
+    <circle cx="403" cy="62" r="5" fill="#257684"/>
+  </g>
+
+  <!-- Allianz Arena (Fröttmaning, near Freimann) -->
+  <g>
+    <path d="M560 448 v-38 q0 -46 108 -46 q108 0 108 46 v38 z" fill="#F4FAFB" stroke="#A3C6CC" stroke-width="3"/>
+    <g stroke="#A3C6CC" stroke-width="2.5" fill="none" opacity=".9">
+      <path d="M566 416 q102 -34 204 0"/>
+      <path d="M572 396 q96 -28 192 0"/>
+      <path d="M596 380 q72 -18 144 0"/>
+    </g>
+    <g stroke="#A3C6CC" stroke-width="2" opacity=".7">
+      <line x1="612" y1="372" x2="606" y2="446"/>
+      <line x1="668" y1="365" x2="666" y2="446"/>
+      <line x1="724" y1="367" x2="728" y2="446"/>
+    </g>
+    <rect x="640" y="424" width="56" height="24" rx="6" fill="#3BAFBF"/>
+    <rect x="652" y="430" width="32" height="18" rx="4" fill="#E7F5F7"/>
+  </g>
+
+  <!-- Ground & street life -->
+  <rect x="0" y="444" width="800" height="56" fill="url(#ground)"/>
+  <rect x="0" y="444" width="800" height="5" fill="#E7F5F7" opacity=".55"/>
+  <use href="#tree" x="40" y="448"/>
+  <use href="#tree" x="536" y="448"/>
+  <use href="#lamp" x="470" y="446"/>
+  <use href="#lamp" x="770" y="446"/>
+</svg>

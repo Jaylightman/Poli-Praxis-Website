@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ärztinnen &amp; Ärzte — alle Standorte | Poli Praxis</title>
+  <meta name="description" content="Alle Ärztinnen und Ärzte der Poli Praxis auf einen Blick — filterbar nach Standort: München Mitte, München Nord und Augsburg.">
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html" aria-label="Poli Praxis — Startseite">
+        <img src="assets/img/logo.png" alt="" width="53" height="40">
+        <span class="brand__name"><span class="brand-poli">Poli</span> <span class="brand-praxis">Praxis</span><span class="brand__sub">Medizin von Mensch zu Mensch</span></span>
+      </a>
+      <nav id="main-nav" class="main-nav" aria-label="Hauptnavigation">
+        <ul>
+          <li><a href="index.html">Start</a></li>
+          <li><a href="index.html#standorte">Standorte</a></li>
+          <li><a href="aerzte.html" aria-current="page">Ärztinnen &amp; Ärzte</a></li>
+          <li><a href="index.html#fachrichtungen">Fachrichtungen</a></li>
+          <li><a href="index.html#kontakt">Kontakt</a></li>
+          <li class="nav-cta"><a class="btn btn--primary" href="https://www.doctolib.de" rel="noopener">Termin buchen</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn--primary header-cta" href="https://www.doctolib.de" rel="noopener">Termin buchen</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></svg>
+        <span class="visually-hidden">Menü öffnen</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Brotkrumen">
+          <a href="index.html">Start</a> <span aria-hidden="true">/</span>
+          <span aria-current="page">Ärztinnen &amp; Ärzte</span>
+        </nav>
+        <h1>Unsere Ärztinnen &amp; Ärzte</h1>
+        <p class="lead">19 Fachärztinnen und Fachärzte an drei Standorten — einige davon an mehreren Standorten für Sie da. Filtern Sie nach Ihrem Standort.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <div class="filter-bar" data-filter-bar role="group" aria-label="Nach Standort filtern">
+          <button class="filter-btn" type="button" data-office="alle" aria-pressed="true">Alle Standorte</button>
+          <button class="filter-btn" type="button" data-office="muenchen-mitte" aria-pressed="false">München Mitte</button>
+          <button class="filter-btn" type="button" data-office="muenchen-nord" aria-pressed="false">München Nord</button>
+          <button class="filter-btn" type="button" data-office="augsburg" aria-pressed="false">Augsburg</button>
+        </div>
+
+        <p class="filter-count" data-filter-count aria-live="polite">19 Ärztinnen und Ärzte</p>
+
+        <div class="doctor-grid">
+          <article class="doctor-card" data-offices="muenchen-mitte augsburg">
+            <span class="avatar" aria-hidden="true">RS</span>
+            <div class="doctor-card__body">
+              <h2>Romylos Siniosoglou</h2>
+              <p class="doctor-card__specialty">Ärztlicher Leiter · Allgemeinmedizin, Psychosomatische Medizin</p>
+              <div class="doctor-card__tags"><span class="chip">München Mitte</span><span class="chip">Augsburg</span></div>
+            </div>
+          </article>
+          <article class="doctor-card" data-offices="muenchen-mitte">
+            <span class="avatar" aria-hidden="true">CM</span>
+            <div class="doctor-card__body">
+              <h2>Charlotte Mantel</h2>
+              <p class="doctor-card__specialty">Innere Medizin · EKG, Langzeit-Blutdruck, Ultraschall, Ernährungsberatung</p>
+              <div class="doctor-card__tags"><span class="chip">München Mitte</span></div>
+            </div>
+          </article>
+          <article class="doctor-card" data-offices="muenchen-mitte">
+            <span class="avatar" aria-hidden="true">CG</span>
+            <div class="doctor-card__body">
+              <h2>Christina Gyftomitrou</h2>
+              <p class="doctor-card__specialty">Fachärztin für Psychiatrie</p>
+              <div class="doctor-card__tags"><span class="chip">München Mitte</span></div>
+            </div>
+          </article>
+          <article class="doctor-card" data-offices="muenchen-mitte">
+            <span class="avatar" aria-hidden="true">JM</span>
+            <div class="doctor-card__body">
+              <h2>Dr. Jasmina Marjanovic</h2>
+              <p class="doctor-card__specialty">Allgemeinmedizin, Psychosomatische Medizin</p>
+              <div class="doctor-card__tags"><span class="chip">München Mitte</span></div>
+            </div>
+          </article>
+          <article class="doctor-card" data-offices="muenchen-mitte augsburg">
+            <span class="avatar" aria-hidden="true">BT</span>
+            <div class="doctor-card__body">
+              <h2>Dr. Borislav Tonev</h2>
+              <p class="doctor-card__specialty">Physikalische &amp; Reha-Medizin · Kinder-, orthopädische &amp; neurologische Reha</p>
+              <div class="doctor-card__tags"><span class="chip">München Mitte</span><span class="chip">Augsburg</span></div>
+            </div>
+          </article>
+          <article class="doctor-card" data-offices="muenchen-mitte muenchen-nord">
+            <span class="avatar" aria-hidden="true">AR</span>
+            <div class="doctor-card__body">
+              <h2>Dr. Anselm Reiners</h2>
+              <p class="doctor-card__specialty">Innere Medizin &amp; Reha-Medizin · Geriatrie, CRPS-Sprechstunde</p>
+              <div class="doctor-card__tags"><span class="chip">München Mitte</span><span class="chip">München Nord</span></div>
+            </div>
+          </article>
+          <article class="doctor-card" data-offices="muenchen-mitte">
+            <span class="avatar" aria-hidden="true">BE</span>
+            <div class="doctor-card__body">
+              <h2>Dr. Bernadette Eder</h2>
+              <p class="doctor-card__specialty">Innere Medizin · Hypertonie, Fettstoffwechsel, Ultraschall</p>
+              <div class="doctor-card__tags"><span class="chip">München Mitte</span></div>
+            </div>
+          </article>
+          <article class="doctor-card" data-offices="muenchen-mitte">
+            <span class="avatar" aria-hidden="true">EZ</span>
+            <div class="doctor-card__body">
+              <h2>Dr. Eva Zwink</h2>
+              <p class="doctor-card__specialty">Gynäkologie · Zusatzausbildung Homöopathie</p>
+              <div class="doctor-card__tags"><span class="chip">München Mitte</span></div>
+            </div>
+          </article>
+          <article class="doctor-card" data-offices="muenchen-mitte">
+            <span class="avatar" aria-hidden="true">RH</span>
+            <div class="doctor-card__body">
+              <h2>Dr. Ronja Heissel-Kohlhaas</h2>
+              <p class="doctor-card__specialty">Fachärztin für Gynäkologie</p>
+              <div class="doctor-card__tags"><span class="chip">München Mitte</span></div>
+            </div>
+          </article>
+          <article class="doctor-card" data-offices="muenchen-mitte">
+            <span class="avatar" aria-hidden="true">JK</span>
+            <div class="doctor-card__body">
+              <h2>Dr. Josef Kornwachs</h2>
+              <p class="doctor-card__specialty">Physikalische &amp; Reha-Medizin · Chirotherapie, Impulstherapie</p>
+              <div class="doctor-card__tags"><span class="chip">München Mitte</span></div>
+            </div>
+          </article>
+          <article class="doctor-card" data-offices="muenchen-mitte">
+            <span class="avatar" aria-hidden="true">MJ</span>
+            <div class="doctor-card__body">
+              <h2>Dr. Majd-Eddin Jahjah</h2>
+              <p class="doctor-card__specialty">Gynäkologie &amp; Geburtshilfe · ambulante OPs, Ästhetik, Brustgesundheit</p>
+              <div class="doctor-card__tags"><span class="chip">München Mitte</span></div>
+            </div>
+          </article>
+          <article class="doctor-card" data-offices="muenchen-nord">
+            <span class="avatar" aria-hidden="true">OG</span>
+            <div class="doctor-card__body">
+              <h2>Dr. Ottmar Galla-Brosch</h2>
+              <p class="doctor-card__specialty">Innere Medizin · Ultraschalldiagnostik</p>
+              <div class="doctor-card__tags"><span class="chip">München Nord</span></div>
+            </div>
+          </article>
+          <article class="doctor-card" data-offices="muenchen-mitte augsburg">
+            <span class="avatar" aria-hidden="true">PG</span>
+            <div class="doctor-card__body">
+              <h2>Dr. Panagiotis Giftakis</h2>
+              <p class="doctor-card__specialty">Innere Medizin &amp; Kardiologie</p>
+              <div class="doctor-card__tags"><span class="chip">München Mitte</span><span class="chip">Augsburg</span></div>
+            </div>
+          </article>
+          <article class="doctor-card" data-offices="muenchen-mitte muenchen-nord">
+            <span class="avatar" aria-hidden="true">SK</span>
+            <div class="doctor-card__body">
+              <h2>Dr. Simon Keyssner</h2>
+              <p class="doctor-card__specialty">Physikalische &amp; Reha-Medizin · Feldenkrais, Psychosomatik</p>
+              <div class="doctor-card__tags"><span class="chip">München Mitte</span><span class="chip">München Nord</span></div>
+            </div>
+          </article>
+          <article class="doctor-card" data-offices="muenchen-mitte">
+            <span class="avatar" aria-hidden="true">UH</span>
+            <div class="doctor-card__body">
+              <h2>Dr. Ursula Hutter</h2>
+              <p class="doctor-card__specialty">Dermatologie &amp; Allergologie · Ästhetik (Privatleistungen)</p>
+              <div class="doctor-card__tags"><span class="chip">München Mitte</span></div>
+            </div>
+          </article>
+          <article class="doctor-card" data-offices="muenchen-mitte">
+            <span class="avatar" aria-hidden="true">WR</span>
+            <div class="doctor-card__body">
+              <h2>Dr. Wolfgang Rietschel</h2>
+              <p class="doctor-card__specialty">Psychiatrie &amp; Neurologie · Psychotherapie, Psychoanalyse, Homöopathie</p>
+              <div class="doctor-card__tags"><span class="chip">München Mitte</span></div>
+            </div>
+          </article>
+          <article class="doctor-card" data-offices="muenchen-mitte augsburg">
+            <span class="avatar" aria-hidden="true">KJ</span>
+            <div class="doctor-card__body">
+              <h2>Karl J. Jeremies</h2>
+              <p class="doctor-card__specialty">Orthopädie &amp; Reha-Medizin · Schmerztherapie, Wirbelsäule, Akupunktur</p>
+              <div class="doctor-card__tags"><span class="chip">München Mitte</span><span class="chip">Augsburg</span></div>
+            </div>
+          </article>
+          <article class="doctor-card" data-offices="muenchen-mitte">
+            <span class="avatar" aria-hidden="true">EC</span>
+            <div class="doctor-card__body">
+              <h2>MUDr. Edita Cvejnova</h2>
+              <p class="doctor-card__specialty">Fachärztin für Gynäkologie</p>
+              <div class="doctor-card__tags"><span class="chip">München Mitte</span></div>
+            </div>
+          </article>
+          <article class="doctor-card" data-offices="muenchen-mitte">
+            <span class="avatar" aria-hidden="true">UA</span>
+            <div class="doctor-card__body">
+              <h2>Ursula Andrae</h2>
+              <p class="doctor-card__specialty">Reha-Medizin · Schmerztherapie</p>
+              <div class="doctor-card__tags"><span class="chip">München Mitte</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Termin vereinbaren">
+      <div class="container">
+        <div class="cta-band">
+          <h2>Die passende Ärztin, den passenden Arzt gefunden?</h2>
+          <p>Buchen Sie Ihren Termin online oder rufen Sie direkt am gewünschten Standort an.</p>
+          <div class="cta-band__actions">
+            <a class="btn btn--primary" href="https://www.doctolib.de" rel="noopener">Online Termin buchen</a>
+            <a class="btn btn--ghost-light" href="index.html#standorte">Standorte ansehen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" id="kontakt">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/img/logo.png" alt="Poli Praxis Logo" width="59" height="44">
+          <p>Poli Praxis — Medizinisches Versorgungszentrum. Medizin von Mensch zu Mensch, an drei Standorten in München und Augsburg.</p>
+        </div>
+        <div class="footer-office">
+          <h3>Poli-Praxis München Mitte</h3>
+          <address>Herzog-Wilhelm-Str. 17<br>80331 München</address>
+          <a href="tel:+498918904350">+49 89 1890 4350</a>
+        </div>
+        <div class="footer-office">
+          <h3>Poli-Praxis München Nord</h3>
+          <address>Wundtstr. 15<br>80939 München</address>
+          <a href="tel:+49893165780">+49 89 31 65 78 0</a>
+        </div>
+        <div class="footer-office">
+          <h3>Poli-Praxis Augsburg</h3>
+          <address>Kurhausstr. 1<br>86157 Augsburg</address>
+          <a href="tel:+49821541545">+49 821 541 545</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="mb-0">© 2026 Poli Praxis MVZ. Alle Rechte vorbehalten.</p>
+        <ul>
+          <li><a href="#">Impressum</a></li>
+          <li><a href="#">Datenschutz</a></li>
+          <li><a href="#">Karriere</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

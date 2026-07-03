@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Illustration: Rathaus und Perlachturm in Augsburg">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#DDF1F4"/>
+      <stop offset=".7" stop-color="#FFFFFF"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2F93A2"/>
+      <stop offset="1" stop-color="#14525C"/>
+    </linearGradient>
+    <g id="tree">
+      <rect x="-3" y="-6" width="6" height="26" rx="2" fill="#3E5C60"/>
+      <circle cx="0" cy="-24" r="20" fill="#2F93A2"/>
+      <circle cx="-13" cy="-14" r="13" fill="#3BAFBF"/>
+      <circle cx="12" cy="-13" r="12" fill="#35A0AF"/>
+    </g>
+    <g id="lamp">
+      <rect x="-2" y="-52" width="4" height="54" rx="2" fill="#54565A"/>
+      <circle cx="0" cy="-56" r="7" fill="#F4E9C8" stroke="#54565A" stroke-width="2"/>
+    </g>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#sky)"/>
+
+  <!-- Sun & clouds -->
+  <circle cx="660" cy="92" r="46" fill="#3BAFBF" opacity=".16"/>
+  <circle cx="660" cy="92" r="28" fill="#3BAFBF" opacity=".18"/>
+  <g fill="#FFFFFF" opacity=".9">
+    <ellipse cx="170" cy="80" rx="46" ry="14"/>
+    <ellipse cx="205" cy="68" rx="30" ry="11"/>
+    <ellipse cx="460" cy="55" rx="34" ry="11"/>
+  </g>
+  <g stroke="#54565A" stroke-width="2" fill="none" opacity=".45" stroke-linecap="round">
+    <path d="M120 130 q6 -7 12 0 M135 126 q6 -7 12 0"/>
+    <path d="M560 110 q6 -7 12 0"/>
+  </g>
+
+  <!-- Far skyline -->
+  <g fill="#A3C6CC" opacity=".45">
+    <rect x="20" y="335" width="66" height="115"/>
+    <polygon points="20,335 53,312 86,335"/>
+    <rect x="92" y="358" width="48" height="92"/>
+    <polygon points="620,340 650,300 656,300 660,290 664,300 670,300 700,340 700,450 620,450"/>
+    <rect x="712" y="355" width="55" height="95"/>
+    <polygon points="712,355 739.5,332 767,355"/>
+  </g>
+
+  <!-- Perlachturm -->
+  <g>
+    <rect x="272" y="188" width="60" height="260" fill="#3BAFBF"/>
+    <rect x="272" y="188" width="18" height="260" fill="#35A0AF"/>
+    <rect x="268" y="252" width="68" height="7" fill="#2F93A2"/>
+    <rect x="268" y="318" width="68" height="7" fill="#2F93A2"/>
+    <!-- onion dome -->
+    <path d="M272 188 C272 165 288 158 296 138 C290 130 296 118 302 112 C308 118 314 130 308 138 C316 158 332 165 332 188 Z" fill="#257684"/>
+    <circle cx="302" cy="106" r="5" fill="#257684"/>
+    <rect x="299" y="88" width="6" height="16" fill="#257684"/>
+    <!-- clock & windows -->
+    <circle cx="302" cy="222" r="15" fill="#E7F5F7"/>
+    <g stroke="#257684" stroke-width="2.5" stroke-linecap="round">
+      <line x1="302" y1="222" x2="302" y2="212"/>
+      <line x1="302" y1="222" x2="310" y2="225"/>
+    </g>
+    <g fill="#E7F5F7">
+      <path d="M282 300 v-22 a8 8 0 0 1 16 0 v22 z"/>
+      <path d="M306 300 v-22 a8 8 0 0 1 16 0 v22 z"/>
+      <path d="M282 388 v-28 a8 8 0 0 1 16 0 v28 z"/>
+      <path d="M306 388 v-28 a8 8 0 0 1 16 0 v28 z"/>
+    </g>
+  </g>
+
+  <!-- Rathaus -->
+  <g>
+    <rect x="376" y="262" width="188" height="186" fill="#64666B"/>
+    <rect x="376" y="262" width="188" height="8" fill="#54565A"/>
+    <!-- gable with volutes -->
+    <path d="M396 262 h148 l-14 -30 h-26 l-12 -26 h-44 l-12 26 h-26 z" fill="#54565A"/>
+    <polygon points="446,206 470,178 494,206" fill="#3F4145"/>
+    <!-- Zirbelnuss (pine cone) -->
+    <ellipse cx="470" cy="170" rx="7" ry="10" fill="#3BAFBF"/>
+    <circle cx="470" cy="238" r="12" fill="#E7F5F7"/>
+    <!-- side onion towers -->
+    <g>
+      <rect x="352" y="288" width="28" height="160" fill="#54565A"/>
+      <path d="M352 288 C352 272 362 268 363 258 C359 253 363 245 366 242 C369 245 373 253 369 258 C370 268 380 272 380 288 Z" fill="#3F4145"/>
+      <rect x="358" y="310" width="16" height="22" rx="6" fill="#E7F5F7"/>
+    </g>
+    <g>
+      <rect x="560" y="288" width="28" height="160" fill="#54565A"/>
+      <path d="M560 288 C560 272 570 268 571 258 C567 253 571 245 574 242 C577 245 581 253 577 258 C578 268 588 272 588 288 Z" fill="#3F4145"/>
+      <rect x="566" y="310" width="16" height="22" rx="6" fill="#E7F5F7"/>
+    </g>
+    <!-- window grid -->
+    <g fill="#E7F5F7">
+      <rect x="396" y="284" width="20" height="26" rx="7"/>
+      <rect x="432" y="284" width="20" height="26" rx="7"/>
+      <rect x="488" y="284" width="20" height="26" rx="7"/>
+      <rect x="524" y="284" width="20" height="26" rx="7"/>
+      <rect x="396" y="326" width="20" height="26" rx="7"/>
+      <rect x="432" y="326" width="20" height="26" rx="7"/>
+      <rect x="488" y="326" width="20" height="26" rx="7"/>
+      <rect x="524" y="326" width="20" height="26" rx="7"/>
+      <rect x="396" y="368" width="20" height="26" rx="7"/>
+      <rect x="432" y="368" width="20" height="26" rx="7"/>
+      <rect x="488" y="368" width="20" height="26" rx="7"/>
+      <rect x="524" y="368" width="20" height="26" rx="7"/>
+    </g>
+    <path d="M448 448 v-32 a22 22 0 0 1 44 0 v32 z" fill="#E7F5F7"/>
+  </g>
+
+  <!-- Bürgerhäuser (right) -->
+  <g>
+    <rect x="614" y="370" width="58" height="78" fill="#3BAFBF"/>
+    <polygon points="610,370 643,344 676,370" fill="#257684"/>
+    <g fill="#E7F5F7">
+      <rect x="624" y="382" width="14" height="18" rx="3"/>
+      <rect x="648" y="382" width="14" height="18" rx="3"/>
+      <rect x="635" y="418" width="16" height="30" rx="2"/>
+    </g>
+    <rect x="680" y="384" width="54" height="64" fill="#2F93A2"/>
+    <polygon points="676,384 707,360 738,384" fill="#1E6D7A"/>
+    <g fill="#E7F5F7">
+      <rect x="690" y="396" width="13" height="17" rx="3"/>
+      <rect x="712" y="396" width="13" height="17" rx="3"/>
+      <rect x="690" y="422" width="13" height="17" rx="3"/>
+      <rect x="712" y="422" width="13" height="17" rx="3"/>
+    </g>
+  </g>
+
+  <!-- Augustusbrunnen-style fountain -->
+  <g>
+    <ellipse cx="160" cy="440" rx="52" ry="12" fill="#54565A"/>
+    <ellipse cx="160" cy="434" rx="42" ry="9" fill="#3BAFBF"/>
+    <rect x="152" y="386" width="16" height="48" rx="4" fill="#64666B"/>
+    <ellipse cx="160" cy="386" rx="20" ry="6" fill="#54565A"/>
+    <rect x="156" y="360" width="8" height="26" rx="3" fill="#54565A"/>
+    <circle cx="160" cy="354" r="7" fill="#3BAFBF"/>
+    <g stroke="#3BAFBF" stroke-width="2.5" fill="none" stroke-linecap="round" opacity=".8">
+      <path d="M160 356 q-22 10 -28 70"/>
+      <path d="M160 356 q22 10 28 70"/>
+    </g>
+  </g>
+
+  <!-- Ground & street life -->
+  <rect x="0" y="444" width="800" height="56" fill="url(#ground)"/>
+  <rect x="0" y="444" width="800" height="5" fill="#E7F5F7" opacity=".55"/>
+  <use href="#tree" x="52" y="448"/>
+  <use href="#tree" x="770" y="448"/>
+  <use href="#lamp" x="240" y="446"/>
+  <use href="#lamp" x="600" y="446"/>
+</svg>

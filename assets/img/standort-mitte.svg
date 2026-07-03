@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Illustration: Frauenkirche und Sendlinger Tor in München Mitte">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#DDF1F4"/>
+      <stop offset=".7" stop-color="#FFFFFF"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2F93A2"/>
+      <stop offset="1" stop-color="#14525C"/>
+    </linearGradient>
+    <g id="tree">
+      <rect x="-3" y="-6" width="6" height="26" rx="2" fill="#3E5C60"/>
+      <circle cx="0" cy="-24" r="20" fill="#2F93A2"/>
+      <circle cx="-13" cy="-14" r="13" fill="#3BAFBF"/>
+      <circle cx="12" cy="-13" r="12" fill="#35A0AF"/>
+    </g>
+    <g id="lamp">
+      <rect x="-2" y="-52" width="4" height="54" rx="2" fill="#54565A"/>
+      <circle cx="0" cy="-56" r="7" fill="#F4E9C8" stroke="#54565A" stroke-width="2"/>
+    </g>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#sky)"/>
+
+  <!-- Sun & clouds -->
+  <circle cx="655" cy="95" r="46" fill="#3BAFBF" opacity=".16"/>
+  <circle cx="655" cy="95" r="28" fill="#3BAFBF" opacity=".18"/>
+  <g fill="#FFFFFF" opacity=".9">
+    <ellipse cx="150" cy="90" rx="46" ry="14"/>
+    <ellipse cx="185" cy="78" rx="30" ry="11"/>
+    <ellipse cx="500" cy="60" rx="38" ry="12"/>
+    <ellipse cx="530" cy="50" rx="24" ry="9"/>
+  </g>
+  <g stroke="#54565A" stroke-width="2" fill="none" opacity=".45" stroke-linecap="round">
+    <path d="M235 120 q6 -7 12 0 M250 116 q6 -7 12 0"/>
+    <path d="M585 150 q6 -7 12 0"/>
+  </g>
+
+  <!-- Far skyline -->
+  <g fill="#A3C6CC" opacity=".45">
+    <polygon points="0,320 0,450 70,450 70,320 35,296"/>
+    <rect x="70" y="345" width="55" height="105"/>
+    <polygon points="125,345 152,322 180,345 180,450 125,450"/>
+    <rect x="480" y="330" width="70" height="120"/>
+    <polygon points="480,330 515,305 550,330"/>
+    <rect x="740" y="340" width="60" height="110"/>
+    <polygon points="740,340 770,318 800,340"/>
+    <rect x="702" y="360" width="38" height="90"/>
+  </g>
+
+  <!-- Row houses (left) -->
+  <g>
+    <rect x="88" y="360" width="62" height="88" fill="#3BAFBF"/>
+    <polygon points="84,360 119,330 154,360" fill="#257684"/>
+    <g fill="#E7F5F7">
+      <rect x="99" y="374" width="14" height="18" rx="3"/>
+      <rect x="125" y="374" width="14" height="18" rx="3"/>
+      <rect x="99" y="402" width="14" height="18" rx="3"/>
+      <rect x="125" y="402" width="14" height="18" rx="3"/>
+      <circle cx="119" cy="349" r="6"/>
+    </g>
+    <rect x="158" y="376" width="56" height="72" fill="#2F93A2"/>
+    <polygon points="154,376 186,350 218,376" fill="#1E6D7A"/>
+    <g fill="#E7F5F7">
+      <rect x="168" y="388" width="13" height="17" rx="3"/>
+      <rect x="191" y="388" width="13" height="17" rx="3"/>
+      <rect x="177" y="418" width="16" height="30" rx="2"/>
+    </g>
+    <rect x="222" y="366" width="52" height="82" fill="#35A0AF"/>
+    <polygon points="218,366 248,342 278,366" fill="#257684"/>
+    <g fill="#E7F5F7">
+      <rect x="232" y="380" width="13" height="17" rx="3"/>
+      <rect x="254" y="380" width="13" height="17" rx="3"/>
+      <rect x="232" y="408" width="13" height="17" rx="3"/>
+      <rect x="254" y="408" width="13" height="17" rx="3"/>
+    </g>
+  </g>
+
+  <!-- Frauenkirche -->
+  <g>
+    <!-- nave -->
+    <rect x="352" y="298" width="96" height="150" fill="#2F93A2"/>
+    <polygon points="348,298 400,254 452,298" fill="#257684"/>
+    <g fill="#E7F5F7">
+      <path d="M366 448 v-40 a10 10 0 0 1 20 0 v40 z"/>
+      <path d="M390 448 v-46 a10 10 0 0 1 20 0 v46 z"/>
+      <path d="M414 448 v-40 a10 10 0 0 1 20 0 v40 z"/>
+      <circle cx="400" cy="282" r="10"/>
+    </g>
+    <!-- left tower -->
+    <g>
+      <rect x="294" y="172" width="62" height="276" fill="#3BAFBF"/>
+      <rect x="294" y="252" width="62" height="6" fill="#2F93A2"/>
+      <rect x="294" y="336" width="62" height="6" fill="#2F93A2"/>
+      <path d="M294 172 a31 34 0 0 1 62 0 z" fill="#257684"/>
+      <rect x="320" y="116" width="10" height="26" fill="#257684"/>
+      <circle cx="325" cy="110" r="7" fill="#257684"/>
+      <circle cx="325" cy="212" r="14" fill="#E7F5F7"/>
+      <g stroke="#257684" stroke-width="2.5" stroke-linecap="round">
+        <line x1="325" y1="212" x2="325" y2="203"/>
+        <line x1="325" y1="212" x2="332" y2="215"/>
+      </g>
+      <g fill="#E7F5F7">
+        <path d="M308 300 v-24 a8 8 0 0 1 16 0 v24 z"/>
+        <path d="M328 300 v-24 a8 8 0 0 1 16 0 v24 z"/>
+        <path d="M308 396 v-30 a8 8 0 0 1 16 0 v30 z"/>
+        <path d="M328 396 v-30 a8 8 0 0 1 16 0 v30 z"/>
+      </g>
+    </g>
+    <!-- right tower -->
+    <g>
+      <rect x="444" y="172" width="62" height="276" fill="#3BAFBF"/>
+      <rect x="444" y="252" width="62" height="6" fill="#2F93A2"/>
+      <rect x="444" y="336" width="62" height="6" fill="#2F93A2"/>
+      <path d="M444 172 a31 34 0 0 1 62 0 z" fill="#257684"/>
+      <rect x="470" y="116" width="10" height="26" fill="#257684"/>
+      <circle cx="475" cy="110" r="7" fill="#257684"/>
+      <circle cx="475" cy="212" r="14" fill="#E7F5F7"/>
+      <g stroke="#257684" stroke-width="2.5" stroke-linecap="round">
+        <line x1="475" y1="212" x2="475" y2="203"/>
+        <line x1="475" y1="212" x2="468" y2="209"/>
+      </g>
+      <g fill="#E7F5F7">
+        <path d="M458 300 v-24 a8 8 0 0 1 16 0 v24 z"/>
+        <path d="M478 300 v-24 a8 8 0 0 1 16 0 v24 z"/>
+        <path d="M458 396 v-30 a8 8 0 0 1 16 0 v30 z"/>
+        <path d="M478 396 v-30 a8 8 0 0 1 16 0 v30 z"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Sendlinger Tor -->
+  <g>
+    <rect x="560" y="318" width="24" height="130" fill="#54565A"/>
+    <polygon points="556,318 572,296 588,318" fill="#3F4145"/>
+    <circle cx="572" cy="330" r="5" fill="#E7F5F7"/>
+    <rect x="584" y="352" width="108" height="96" fill="#64666B"/>
+    <rect x="584" y="352" width="108" height="8" fill="#54565A"/>
+    <path d="M606 448 v-52 a32 32 0 0 1 64 0 v52 z" fill="#E7F5F7"/>
+    <path d="M614 448 v-48 a24 24 0 0 1 48 0 v48 z" fill="#DDF1F4"/>
+    <rect x="692" y="318" width="24" height="130" fill="#54565A"/>
+    <polygon points="688,318 704,296 720,318" fill="#3F4145"/>
+    <circle cx="704" cy="330" r="5" fill="#E7F5F7"/>
+  </g>
+
+  <!-- Ground & street life -->
+  <rect x="0" y="444" width="800" height="56" fill="url(#ground)"/>
+  <rect x="0" y="444" width="800" height="5" fill="#E7F5F7" opacity=".55"/>
+  <use href="#tree" x="52" y="446"/>
+  <use href="#tree" x="530" y="448"/>
+  <use href="#tree" x="768" y="446"/>
+  <use href="#lamp" x="284" y="446"/>
+  <use href="#lamp" x="648" y="446"/>
+</svg>
