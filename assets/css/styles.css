@@ -495,6 +495,15 @@ ul { margin: 0; padding: 0; list-style: none; }
   margin-top: auto;
   padding-top: var(--sp-3);
   border-top: 1px solid var(--pp-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+/* The booking button must stay clickable above the card's stretched link */
+.office-card__footer .btn {
+  position: relative;
+  z-index: 2;
+  width: 100%;
 }
 
 /* --------------------------------------------------------------------------
@@ -534,6 +543,15 @@ ul { margin: 0; padding: 0; list-style: none; }
 .feature-card h3 a { color: var(--pp-ink); text-decoration: none; }
 .feature-card h3 a::after { content: ""; position: absolute; inset: 0; }
 .feature-card h3 a:hover { color: var(--pp-teal-deep); }
+
+/* Clickable-card affordance: teal border on hover.
+   Applies to office cards and any feature card whose title is a link. */
+.office-card:hover,
+.office-card:focus-within,
+.feature-card:has(h3 a):hover,
+.feature-card:has(h3 a):focus-within {
+  border-color: var(--pp-teal);
+}
 .feature-card__tags {
   display: flex;
   flex-wrap: wrap;
