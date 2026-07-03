@@ -82,6 +82,9 @@ img, svg { display: block; max-width: 100%; }
 
 ul { margin: 0; padding: 0; list-style: none; }
 
+/* [hidden] must always win — even over display:flex on cards (filters rely on it) */
+[hidden] { display: none !important; }
+
 /* Visible focus for keyboard users */
 :focus-visible {
   outline: 3px solid var(--pp-ring);
@@ -386,11 +389,38 @@ ul { margin: 0; padding: 0; list-style: none; }
 .page-hero--nord     .page-hero__art { background-image: url("../img/standort-nord.svg"); }
 .page-hero--augsburg .page-hero__art { background-image: url("../img/standort-augsburg.svg"); }
 
+/* Hero/header titles: white text, light logo gray on "Poli-", and a soft
+   dark halo only behind "Praxis" — where the teal-on-teal actually needs it */
+.hero h1,
+.page-hero h1 { color: #fff; }
+.hero h1 .brand-poli,
+.page-hero h1 .brand-poli {
+  color: #666666;
+  position: relative;
+  z-index: 1; /* keeps "Poli-" (incl. the hyphen) in front of the glow */
+}
+.hero h1 .brand-praxis,
+.page-hero h1 .brand-praxis {
+  color: #3BAFBF;
+  position: relative;
+  z-index: 0;
+}
+.hero h1 .brand-praxis::before,
+.page-hero h1 .brand-praxis::before {
+  content: "";
+  position: absolute;
+  inset: -.02em -.26em;
+  z-index: -1;
+  background: rgba(255, 255, 255, .8);
+  border-radius: 999px;
+  filter: blur(.22em); /* softer, wider fade into the teal */
+}
+
 @media (max-width: 699px) {
   .page-hero__art { width: 100%; }
   .page-hero__art::before { background: rgba(59, 175, 191, .78); }
 }
-.page-hero h1 { color: #fff; margin-bottom: var(--sp-2); }
+.page-hero h1 { margin-bottom: var(--sp-2); } /* color comes from the halo-title rule above */
 .page-hero .lead { color: rgba(255, 255, 255, .92); font-size: 18px; margin-bottom: 0; }
 .breadcrumb {
   display: flex;
@@ -613,6 +643,25 @@ ul { margin: 0; padding: 0; list-style: none; }
   color: #fff;
 }
 .filter-count { font-size: 15px; color: var(--pp-text-muted); margin-bottom: var(--sp-4); }
+
+/* Filter groups (homepage office filters) */
+.office-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-4) var(--sp-7);
+  margin-bottom: var(--sp-4);
+}
+.office-filters .filter-bar { margin-bottom: 0; }
+.filter-label {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--pp-text-muted);
+  margin-bottom: var(--sp-2);
+}
 
 /* --------------------------------------------------------------------------
    10. CTA band & footer

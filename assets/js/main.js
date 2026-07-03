@@ -165,6 +165,61 @@
   });
 
   /* ------------------------------------------------------------------
+     Office filters on the homepage: city (München/Augsburg) + open now
+     ------------------------------------------------------------------ */
+  var officeCards = document.querySelectorAll('[data-office-card]');
+  if (officeCards.length) {
+    var cityBar = document.querySelector('[data-city-filter]');
+    var statusBar = document.querySelector('[data-status-filter]');
+    var officeCount = document.querySelector('[data-office-count]');
+    var activeCity = 'alle';
+    var activeStatus = 'alle';
+
+    var applyOfficeFilter = function () {
+      var visible = 0;
+      officeCards.forEach(function (card) {
+        var cityOk = activeCity === 'alle' || card.getAttribute('data-city') === activeCity;
+        var statusOk = true;
+        if (activeStatus === 'offen') {
+          var status = statusFor(card.getAttribute('data-slug'));
+          statusOk = !!(status && status.open);
+        }
+        var show = cityOk && statusOk;
+        card.hidden = !show;
+        if (show) {
+          visible++;
+          if (!reduceMotion) {
+            card.classList.remove('card-pop');
+            void card.offsetWidth;
+            card.classList.add('card-pop');
+          }
+        }
+      });
+      if (officeCount) {
+        officeCount.textContent = visible === 0
+          ? 'Kein Standort entspricht der Auswahl — derzeit ist keine Praxis geöffnet.'
+          : visible + (visible === 1 ? ' Standort' : ' Standorte');
+      }
+    };
+
+    var wireFilterBar = function (bar, attr, setValue) {
+      if (!bar) return;
+      var btns = bar.querySelectorAll('.filter-btn');
+      btns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          btns.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+          btn.setAttribute('aria-pressed', 'true');
+          setValue(btn.getAttribute(attr));
+          applyOfficeFilter();
+        });
+      });
+    };
+    wireFilterBar(cityBar, 'data-city', function (v) { activeCity = v; });
+    wireFilterBar(statusBar, 'data-status', function (v) { activeStatus = v; });
+    applyOfficeFilter();
+  }
+
+  /* ------------------------------------------------------------------
      Doctor filter by office (aerzte.html) — with pop-in transition
      ------------------------------------------------------------------ */
   var filterBar = document.querySelector('[data-filter-bar]');
