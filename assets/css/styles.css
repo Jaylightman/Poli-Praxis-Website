@@ -192,6 +192,19 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .chip--gray { background: #EEEFF0; color: var(--pp-gray); }
 
+/* Location chips: behave like buttons — never underlined, in no state */
+a.chip,
+a.chip:link, a.chip:visited, a.chip:hover, a.chip:focus, a.chip:active {
+  text-decoration: none !important;
+}
+a.chip {
+  cursor: pointer;
+  position: relative;
+  z-index: 2; /* stays clickable above a card's stretched link */
+  transition: background-color var(--dur) var(--ease-out), color var(--dur) var(--ease-out);
+}
+a.chip:hover, a.chip:focus-visible { background: var(--pp-teal); color: #fff; }
+
 .text-link {
   display: inline-flex;
   align-items: center;
@@ -441,8 +454,8 @@ ul { margin: 0; padding: 0; list-style: none; }
   gap: var(--sp-5);
   grid-template-columns: 1fr;
 }
-@media (min-width: 700px)  { .office-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1024px) { .office-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 700px)  { .office-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .office-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
 .office-card {
   display: flex;
@@ -467,14 +480,18 @@ ul { margin: 0; padding: 0; list-style: none; }
   padding: var(--sp-5);
   flex: 1;
 }
-.office-card__body h3 { margin: 0; }
+.office-card__body h2,
+.office-card__body h3 { margin: 0; font-size: 24px; font-weight: 600; }
+.office-card__body h2 a,
 .office-card__body h3 a {
   color: var(--pp-ink);
   text-decoration: none;
 }
 /* Stretch the title link over the whole card */
 .office-card { position: relative; }
+.office-card__body h2 a::after,
 .office-card__body h3 a::after { content: ""; position: absolute; inset: 0; }
+.office-card__body h2 a:hover,
 .office-card__body h3 a:hover { color: var(--pp-teal-deep); }
 
 .office-card__location {
@@ -513,11 +530,14 @@ ul { margin: 0; padding: 0; list-style: none; }
   display: grid;
   gap: var(--sp-4);
   grid-template-columns: 1fr;
+  grid-auto-rows: 1fr; /* every card row gets the same height */
 }
-@media (min-width: 700px)  { .feature-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1024px) { .feature-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 700px)  { .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .feature-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 
 .feature-card {
+  display: flex;
+  flex-direction: column;
   background: #fff;
   border: 1px solid var(--pp-border);
   border-radius: var(--radius-card);
@@ -535,19 +555,29 @@ ul { margin: 0; padding: 0; list-style: none; }
   color: var(--pp-teal-dark);
   margin-bottom: var(--sp-3);
 }
-.feature-card h3, .feature-card h4 { font-size: 18px; margin-bottom: var(--sp-2); }
+.feature-card h2, .feature-card h3, .feature-card h4 {
+  font-size: 18px;
+  margin-bottom: var(--sp-2);
+  overflow-wrap: break-word;
+  hyphens: auto; /* long German specialty names wrap cleanly */
+}
 .feature-card p { font-size: 15px; color: var(--pp-text-muted); margin: 0; }
 
 /* Linkable specialty card: title link stretches over the whole card */
 .feature-card { position: relative; }
+.feature-card h2 a,
 .feature-card h3 a { color: var(--pp-ink); text-decoration: none; }
+.feature-card h2 a::after,
 .feature-card h3 a::after { content: ""; position: absolute; inset: 0; }
+.feature-card h2 a:hover,
 .feature-card h3 a:hover { color: var(--pp-teal-deep); }
 
 /* Clickable-card affordance: teal border on hover.
    Applies to office cards and any feature card whose title is a link. */
 .office-card:hover,
 .office-card:focus-within,
+.feature-card:has(h2 a):hover,
+.feature-card:has(h2 a):focus-within,
 .feature-card:has(h3 a):hover,
 .feature-card:has(h3 a):focus-within {
   border-color: var(--pp-teal);
@@ -556,10 +586,11 @@ ul { margin: 0; padding: 0; list-style: none; }
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-top: var(--sp-3);
+  margin-top: auto; /* pins the location tags to the card bottom */
   padding-top: var(--sp-3);
   border-top: 1px solid var(--pp-border);
 }
+.feature-card p { margin-bottom: var(--sp-3); }
 .feature-card__tags .chip { font-size: 12.5px; padding: 2px 10px; }
 
 .info-grid {
@@ -567,7 +598,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   gap: var(--sp-4);
   grid-template-columns: 1fr;
 }
-@media (min-width: 900px) { .info-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 900px) { .info-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
 .info-card {
   background: #fff;
@@ -601,8 +632,8 @@ ul { margin: 0; padding: 0; list-style: none; }
   gap: var(--sp-4);
   grid-template-columns: 1fr;
 }
-@media (min-width: 640px)  { .doctor-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1024px) { .doctor-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 640px)  { .doctor-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .doctor-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
 .doctor-card {
   display: flex;
@@ -721,7 +752,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   grid-template-columns: 1fr;
   margin-bottom: var(--sp-7);
 }
-@media (min-width: 700px)  { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 700px)  { .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (min-width: 1024px) { .footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; } }
 
 .footer-brand img { height: 56px; width: auto; margin-bottom: var(--sp-3); background: #fff; padding: 8px; border-radius: 8px; }
@@ -969,6 +1000,15 @@ section[id] { scroll-margin-top: 90px; }
   color: var(--pp-ink);
 }
 .source-note { font-size: 14px; color: var(--pp-text-muted); }
+
+/* Placeholder values (e.g. in the Impressum) that must be replaced with real data */
+mark.placeholder {
+  background: #FDF3D7;
+  color: #7A5B14;
+  padding: 0 5px;
+  border-radius: 4px;
+  font-style: normal;
+}
 
 .price-card { text-align: center; }
 .price-card .price-label {

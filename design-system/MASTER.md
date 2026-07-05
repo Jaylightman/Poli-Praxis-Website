@@ -111,5 +111,9 @@ Current offices: **München Mitte** (Herzog-Wilhelm-Str. 17) · **München Nord*
 
 - `index.html` — Hero (claim + stats) → **Standorte grid (photo, description, location)** → Fachrichtungen → Ärzte-Teaser → CTA → Footer
 - `standort-<slug>.html` — Office hero (**location-specific art**: `.page-hero--<slug>` blends the city illustration behind the title via `.page-hero__art` + teal gradient overlay; full-width tinted at <700px) → contact/hours/map cards → specialties → team → CTA
+- `standorte.html` — all three office cards with Ort + Jetzt-geöffnet filters (nav "Standorte" points here; homepage keeps its full section with same cards)
 - `aerzte.html` — all doctors, filterable by office; multi-office doctors appear under every office filter
+- `fachrichtungen.html` — all 9 specialties, filterable by office (nav "Fachrichtungen"); homepage shows a 4-card teaser + link
+- `impressum.html` / `datenschutz.html` — legal pages (yellow `mark.placeholder` = example values to replace); linked from every footer
+- Location chips on doctor/specialty cards are `a.chip` links to the location pages (never underlined)
 - `inuspherese.html` — therapy page (INUSpherese®, private service, **exclusive to München Mitte**): verbatim text from the Poli-Praxis-Privat project's Inuspherese page (hero + TOC, Was ist das, Ablauf, Durchblutung, MUKPS, Mikroplastik, Entzündungen, LongCovid/PostVac, Kosten 158/2.700/5.200 €) restyled with our tokens; images copied from the Privat project + our own SVG flow diagram (`assets/img/inuspherese-ablauf.svg`). Linked from a homepage specialty card (Mitte-only tag, filterable) and a CTA band on the Mitte page.
