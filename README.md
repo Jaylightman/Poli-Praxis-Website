@@ -33,12 +33,7 @@ Statische Website ohne Build-Schritt — reines HTML, CSS und Vanilla-JavaScript
 
 ## Entwicklung
 
-Kein Setup nötig — Repository klonen und `index.html` im Browser öffnen, oder einen lokalen Server starten:
-
-```bash
-python -m http.server 8000
-# → http://localhost:8000
-```
+Kein Setup nötig — Repository klonen und `index.html` im Browser öffnen.
 
 ## Deployment
 
