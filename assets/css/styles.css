@@ -1064,3 +1064,84 @@ mark.placeholder {
 }
 .back-to-top.is-visible { opacity: 1; transform: none; pointer-events: auto; }
 .back-to-top:hover { background: var(--pp-teal-deep); }
+
+/* --------------------------------------------------------------------------
+   11. Kontakt location picker (modal)
+   -------------------------------------------------------------------------- */
+#kontakt-anschrift { scroll-margin-top: 88px; }
+
+.kontakt-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-5);
+  background: rgba(20, 82, 92, .55);
+  backdrop-filter: blur(3px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--dur) var(--ease-out), visibility var(--dur) var(--ease-out);
+}
+.kontakt-modal.is-open { opacity: 1; visibility: visible; }
+
+.kontakt-modal__dialog {
+  background: #fff;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-md);
+  width: 100%;
+  max-width: 440px;
+  padding: var(--sp-6);
+  transform: translateY(12px) scale(.98);
+  transition: transform var(--dur) var(--ease-out);
+}
+.kontakt-modal.is-open .kontakt-modal__dialog { transform: none; }
+
+.kontakt-modal__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-2);
+}
+.kontakt-modal__head h2 { font-size: 20px; margin: 0; }
+.kontakt-modal__intro { color: var(--pp-text-muted); font-size: 15px; margin: 0 0 var(--sp-5); }
+
+.kontakt-modal__close {
+  flex-shrink: 0;
+  width: 36px; height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: var(--pp-teal-tint);
+  color: var(--pp-teal-deep);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color var(--dur) var(--ease-out);
+}
+.kontakt-modal__close:hover { background: var(--pp-border); }
+
+.kontakt-modal__options { display: flex; flex-direction: column; gap: var(--sp-3); }
+.kontakt-modal__option {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-4);
+  border: 1px solid var(--pp-border);
+  border-radius: var(--radius-card);
+  text-decoration: none;
+  color: var(--pp-ink);
+  transition: border-color var(--dur) var(--ease-out), background-color var(--dur) var(--ease-out), transform var(--dur) var(--ease-out);
+}
+.kontakt-modal__option:hover {
+  border-color: var(--pp-teal);
+  background: var(--pp-teal-tint);
+  color: var(--pp-ink);
+  transform: translateY(-1px);
+}
+.kontakt-modal__option > svg { color: var(--pp-teal); flex-shrink: 0; }
+.kontakt-modal__option-text { flex: 1; display: flex; flex-direction: column; }
+.kontakt-modal__option-name { font-family: var(--font-heading); font-weight: 600; }
+.kontakt-modal__option-addr { font-size: 14px; color: var(--pp-text-muted); }

@@ -314,4 +314,107 @@
   };
   window.addEventListener('scroll', onScrollTopBtn, { passive: true });
   onScrollTopBtn();
+
+  /* ------------------------------------------------------------------
+     Kontakt: nav link opens a location picker, then jumps to that
+     office's "Kontakt & Anschrift" section
+     ------------------------------------------------------------------ */
+  var kontaktTriggers = document.querySelectorAll('[data-kontakt-trigger]');
+  if (kontaktTriggers.length) {
+    var KONTAKT_OFFICES = [
+      { name: 'München Mitte', addr: 'Herzog-Wilhelm-Str. 17, München', href: 'standort-muenchen-mitte.html#kontakt-anschrift' },
+      { name: 'München Nord', addr: 'Wundtstr. 15, München', href: 'standort-muenchen-nord.html#kontakt-anschrift' },
+      { name: 'Augsburg', addr: 'Kurhausstr. 1, Augsburg', href: 'standort-augsburg.html#kontakt-anschrift' }
+    ];
+    var pinSvg = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>';
+    var arrowSvg = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>';
+
+    var overlay = document.createElement('div');
+    overlay.className = 'kontakt-modal';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-labelledby', 'kontakt-modal-title');
+    overlay.hidden = true;
+
+    var optionsHtml = KONTAKT_OFFICES.map(function (o) {
+      return '<a class="kontakt-modal__option" href="' + o.href + '">' +
+        pinSvg +
+        '<span class="kontakt-modal__option-text">' +
+          '<span class="kontakt-modal__option-name">' + o.name + '</span>' +
+          '<span class="kontakt-modal__option-addr">' + o.addr + '</span>' +
+        '</span>' + arrowSvg +
+      '</a>';
+    }).join('');
+
+    overlay.innerHTML =
+      '<div class="kontakt-modal__dialog">' +
+        '<div class="kontakt-modal__head">' +
+          '<h2 id="kontakt-modal-title">Welchen Standort möchten Sie kontaktieren?</h2>' +
+          '<button type="button" class="kontakt-modal__close" aria-label="Schließen">' +
+            '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>' +
+          '</button>' +
+        '</div>' +
+        '<p class="kontakt-modal__intro">Wählen Sie eine Praxis — Sie gelangen direkt zu Adresse und Kontaktdaten.</p>' +
+        '<div class="kontakt-modal__options">' + optionsHtml + '</div>' +
+      '</div>';
+    document.body.appendChild(overlay);
+
+    var closeBtn = overlay.querySelector('.kontakt-modal__close');
+    var focusable = overlay.querySelectorAll('a.kontakt-modal__option, button');
+    var lastFocused = null;
+
+    var openModal = function (trigger) {
+      lastFocused = trigger || document.activeElement;
+      overlay.hidden = false;
+      // next frame so the transition runs from the hidden state
+      requestAnimationFrame(function () { overlay.classList.add('is-open'); });
+      if (focusable.length) focusable[0].focus();
+    };
+
+    var closeModal = function () {
+      overlay.classList.remove('is-open');
+      var finish = function () {
+        overlay.hidden = true;
+        overlay.removeEventListener('transitionend', finish);
+      };
+      if (reduceMotion) finish();
+      else overlay.addEventListener('transitionend', finish);
+      if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+    };
+
+    kontaktTriggers.forEach(function (trigger) {
+      trigger.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (nav && nav.classList.contains('is-open')) {
+          nav.classList.remove('is-open');
+          if (toggle) toggle.setAttribute('aria-expanded', 'false');
+        }
+        openModal(trigger);
+      });
+    });
+
+    // Any option click closes the modal (navigation/scroll proceeds)
+    overlay.querySelectorAll('.kontakt-modal__option').forEach(function (opt) {
+      opt.addEventListener('click', function () { closeModal(); });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) closeModal();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (overlay.hidden) return;
+      if (e.key === 'Escape') { closeModal(); return; }
+      if (e.key === 'Tab' && focusable.length) {
+        var first = focusable[0];
+        var last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault(); last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault(); first.focus();
+        }
+      }
+    });
+  }
 })();
