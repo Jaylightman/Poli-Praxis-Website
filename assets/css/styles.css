@@ -522,6 +522,11 @@ a.chip:hover, a.chip:focus-visible { background: var(--pp-teal); color: #fff; }
   z-index: 2;
   width: 100%;
 }
+.office-card__actions {
+  display: flex;
+  gap: var(--sp-2);
+}
+.office-card__actions .btn { flex: 1 1 0; width: auto; min-width: 0; padding-inline: 12px; text-align: center; line-height: 1.2; }
 
 /* --------------------------------------------------------------------------
    8. Specialty & info cards
@@ -617,6 +622,13 @@ a.chip:hover, a.chip:focus-visible { background: var(--pp-teal); color: #fff; }
 .info-card h2 svg, .info-card h3 svg { color: var(--pp-teal-dark); flex-shrink: 0; }
 .info-card address { font-style: normal; color: var(--pp-text-muted); }
 .info-card a { font-weight: 500; }
+.info-card__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+.info-card__actions .btn { width: 100%; }
+.info-card__actions a { font-weight: 600; }
 
 .hours-table { width: 100%; border-collapse: collapse; font-size: 15px; }
 .hours-table th, .hours-table td { text-align: left; padding: 6px 0; vertical-align: top; }
