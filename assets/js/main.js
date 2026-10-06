@@ -118,6 +118,10 @@
     'augsburg': {
       1: [[9, 12], [14, 17]], 2: [[9, 12], [14, 17]], 3: [[9, 12]],
       4: [[9, 14], [15.5, 18]], 5: [[9, 14]]
+    },
+    'augsburg-zentrum': {
+      1: [[8, 12]], 2: [[8, 12], [13, 17]], 3: [[8, 12], [13, 17]],
+      4: [[8, 14]], 5: [[8, 14]]
     }
   };
   var DAY_NAMES = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
@@ -224,7 +228,7 @@
      Cards carry data-offices; specialty cards derive it from their
      location chips so the visible tags stay the single source of truth.
      ------------------------------------------------------------------ */
-  var CITY_SLUGS = { 'München Mitte': 'muenchen-mitte', 'München Nord': 'muenchen-nord', 'Augsburg': 'augsburg' };
+  var CITY_SLUGS = { 'München Mitte': 'muenchen-mitte', 'München Nord': 'muenchen-nord', 'Augsburg Pfersee': 'augsburg', 'Augsburg Zentrum': 'augsburg-zentrum' };
   document.querySelectorAll('.feature-card__tags').forEach(function (tags) {
     var slugs = [];
     tags.querySelectorAll('.chip').forEach(function (chip) {
@@ -324,7 +328,8 @@
     var KONTAKT_OFFICES = [
       { name: 'München Mitte', addr: 'Herzog-Wilhelm-Str. 17, München', href: 'standort-muenchen-mitte.html#kontakt-anschrift' },
       { name: 'München Nord', addr: 'Wundtstr. 15, München', href: 'standort-muenchen-nord.html#kontakt-anschrift' },
-      { name: 'Augsburg', addr: 'Kurhausstr. 1, Augsburg', href: 'standort-augsburg.html#kontakt-anschrift' }
+      { name: 'Augsburg Pfersee', addr: 'Kurhausstr. 1, Augsburg', href: 'standort-augsburg-pfersee.html#kontakt-anschrift' },
+      { name: 'Augsburg Zentrum', addr: 'Ludwigstraße 7, Augsburg', href: 'standort-augsburg-zentrum.html#kontakt-anschrift' }
     ];
     var pinSvg = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>';
     var arrowSvg = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>';

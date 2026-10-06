@@ -401,6 +401,7 @@ a.chip:hover, a.chip:focus-visible { background: var(--pp-teal); color: #fff; }
 .page-hero--mitte    .page-hero__art { background-image: url("../img/standort-mitte.svg"); }
 .page-hero--nord     .page-hero__art { background-image: url("../img/standort-nord.svg"); }
 .page-hero--augsburg .page-hero__art { background-image: url("../img/standort-augsburg.svg"); }
+.page-hero--augsburg-zentrum .page-hero__art { background-image: url("../img/standort-augsburg.svg"); }
 
 /* Hero/header titles: white text, light logo gray on "Poli-", and a soft
    dark halo only behind "Praxis" — where the teal-on-teal actually needs it */
@@ -644,13 +645,11 @@ a.chip:hover, a.chip:focus-visible { background: var(--pp-teal); color: #fff; }
   gap: var(--sp-4);
   grid-template-columns: 1fr;
 }
-@media (min-width: 640px)  { .doctor-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (min-width: 1024px) { .doctor-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 
 .doctor-card {
   display: flex;
-  gap: var(--sp-4);
-  align-items: flex-start;
+  gap: var(--sp-5);
+  align-items: center;
   background: #fff;
   border: 1px solid var(--pp-border);
   border-radius: var(--radius-card);
@@ -662,18 +661,39 @@ a.chip:hover, a.chip:focus-visible { background: var(--pp-teal); color: #fff; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  border-radius: 16px;
   flex-shrink: 0;
   background: var(--pp-teal-tint);
   color: var(--pp-teal-deep);
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 18px;
+  font-size: 56px;
   letter-spacing: .02em;
 }
 .doctor-card:nth-child(even) .avatar { background: #EEEFF0; color: var(--pp-gray); }
+.avatar--photo { object-fit: cover; padding: 0; overflow: hidden; }
+
+.role-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: var(--sp-2);
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--pp-teal);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.doctor-card--lead {
+  border-color: var(--pp-teal);
+  box-shadow: 0 0 0 1px var(--pp-teal), var(--shadow-sm);
+}
 
 .doctor-card__body { min-width: 0; }
 .doctor-card h3, .doctor-card h4 { font-size: 17px; margin-bottom: 2px; }
@@ -765,7 +785,7 @@ a.chip:hover, a.chip:focus-visible { background: var(--pp-teal); color: #fff; }
   margin-bottom: var(--sp-7);
 }
 @media (min-width: 700px)  { .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (min-width: 1024px) { .footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; } }
+@media (min-width: 1024px) { .footer-grid { grid-template-columns: 1.4fr repeat(4, 1fr); } }
 
 .footer-logo-link { display: inline-block; line-height: 0; }
 .footer-brand img { height: 56px; width: auto; margin-bottom: var(--sp-3); background: #fff; padding: 8px; border-radius: 8px; }
